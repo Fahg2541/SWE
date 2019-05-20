@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Create Student</title>
+
+</head>
+
+<body>
+    <body>
+        <div class="container">
+        <form>
+            <hr>
+            <h5 class="modal-title">Create Student</h5>
+            <hr>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Name</span>
+                </div>
+                <input type="text" class="form-control"  id="name" name="name">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Age</span>
+                </div>
+                <input type="text" class="form-control"  id="age" name="age">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >hno</span>
+                </div>
+                <input type="text" class="form-control"  id="noh" name="noh">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Subdistrict</span>
+                </div>
+                <input type="text" class="form-control"  id="subdistrict" name="subdistrict">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >District</span>
+                </div>
+                <input type="text" class="form-control"  id="district" name="district">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Province</span>
+                </div>
+                <input type="text" class="form-control"  id="province" name="province">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Primary</span>
+                </div>
+                <input type="text" class="form-control"  id="education0" name="education0">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >High school</span>
+                </div>
+                <input type="text" class="form-control"  id="education1" name="education1">
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >University</span>
+                </div>
+                <input type="text" class="form-control"  id="education2" name="education2">
+                </div>
+        </form>
+        <form>
+            <button type="summit" class="btn btn-success">Success</button>
+        </div>
+        
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                
+                $("Create").click(function () { 
+                   
+                    $.post("http://localhost/slimMongo/insert", 
+                    {
+                        name: $("#name").val(),
+                        age: $("#age").val(),
+                        education0: $("#education0").val(),
+                        education1: $("#education1").val(),
+                        education2: $("#education2").val(),
+                        noh: $("#noh").val(),
+                        subdistrict: $("#subdistrict").val(),
+                        district: $("#district").val(),
+                        province: $("#province").val()
+                        
+                    },
+                        function (data, status) {
+                            alert("success");
+                        },
+                        
+                    );
+                    
+                });
+                // $("#btn-confirm").click(function (e) { 
+                //     e.preventDefault();
+                //     alert("click!");
+                // });
+            });
+        </script>
+
+</body>
+
+</html>
